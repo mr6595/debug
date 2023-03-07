@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gallery | My Website</title>
+	<style>
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+		}
+
+		header h1 {
+			margin: 0;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		nav li:last-child {
+			margin-right: 0;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 18px;
+			padding: 5px;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover {
+			background-color: #fff;
+			color: #333;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 20px;
+		}
+
+		.gallery img, .gallery video {
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+			transition: all 0.3s ease;
+		}
+
+		.gallery img:hover, .gallery video:hover {
+			transform: scale(1.1);
+		}
+
+		.upload-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 50px auto;
+		}
+
+		.upload-form label {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.upload-form input[type="file"] {
+			margin-bottom: 20px;
+		}
+
+		.upload-form button {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.upload-form button:hover {
+			background-color: #fff;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My Website</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="knowledge.html">Knowledge</a></li>
+				<li><a href="video.html">Video</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="upload-form">
+			<h2>Upload Images and Videos</h2>
+			<form action="upload.php" method="POST" enctype="multipart/form-data">
+				<label for="file-upload">Choose file to upload:</label>
+				<input type="file" name="file-upload" id="file-upload">
+				<button type="submit" name="submit">Upload</button>
+			</form>
+		</section>
+		<section class="gallery">
+			<?php
+				$dir = "uploads/";
+				$
