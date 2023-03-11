@@ -33,4 +33,4 @@ inputBox.addEventListener('keydown', (e) => {
     const wpm = (wordCount / timer) * 60;
     wpmDisplay.textContent = wpm.toFixed(1);
   }
-
+});
